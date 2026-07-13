@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "badge": "TokiJr Portfolio 2026",
+    "greeting": "Hello, I am",
+    "typewriter": ["FullStack Developer", "Web Developer", "L3-CS Student"],
+    "description": "I design secure, modern and high-performance digital solutions. Passionate about innovation in the service of system reliability.",
+    "cta_more": "Learn more",
+    "cta_contact": "Contact me",
+    "badge_student": "L3-IG Student",
+    "badge_school": "ENI - Fianarantsoa"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About",
+    "title_accent": "me",
+    "p1": "A third-year (L3) student at ENI, I am a Full Stack developer passionate about building high-performance and secure web solutions. My technical expertise combines robust backend architecture design — such as Node.js with Prisma ORM — with modern, reactive interfaces built with React.js and Tailwind CSS.",
+    "p2": "Beyond development, I bring skills in cybersecurity, DevOps automation, and UX/UI principles to ensure reliable and intuitive products. Rigorous in requirements analysis, I am committed to crafting unique digital tools that precisely meet the functional and technical expectations of each project.",
+    "stats": [
+      { "titre": "Technologies",  "valeur": "10+", "description": "Mastered technologies" },
+      { "titre": "Projects done", "valeur": "5+",  "description": "Completed projects" },
+      { "titre": "Certifications","valeur": "2",   "description": "Certifications obtained" }
+    ]
+  }
+}

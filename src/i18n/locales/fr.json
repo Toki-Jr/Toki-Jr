@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "theme": {
+    "dark": "Sombre",
+    "light": "Claire"
+  },
+   "home": {
+    "greeting": "Bonjour les gars, aujourd'hui c'est notre premier jour de rencontre."
+  },
+  "hero": {
+    "badge": "Portfolio TokiJr 2026",
+    "greeting": "Bonjour, je suis",
+    "typewriter": ["Développeur FullStack", "Développeur Web", "Etudiant L3-IG"],
+    "description": "Je conçois des solutions numériques sécurisées, modernes et performantes. Passionné par l'innovation au service de la fiabilité système.",
+    "cta_more": "En savoir plus",
+    "cta_contact": "Contactez-moi",
+    "badge_student": "Etudiant L3-IG",
+    "badge_school": "ENI - Fianarantsoa"
+  },
+  "about": {
+    "title": "À propos",
+    "title_accent": "de moi",
+    "p1": "Étudiant en troisième année (L3) à l'ENI, je suis un développeur Full Stack passionné par la création de solutions web performantes et sécurisées. Mon expertise technique combine la conception d'architectures backend robustes, telle que Node.js avec ORM Prisma, à la réalisation d'interfaces modernes et réactives avec React.Js et Tailwind CSS.",
+    "p2": "Au-delà du développement, j'intègre des compétences en cybersécurité, en automatisation DevOps et en principes UX/UI pour garantir des produits fiables et intuitifs. Rigoureux dans l'analyse des besoins, je m'engage à concevoir des outils numériques uniques qui répondent précisément aux attentes fonctionnelles et techniques de chaque projet.",
+    "stats": [
+      { "titre": "Technologies",     "valeur": "10+", "description": "Technologies maîtrisées" },
+      { "titre": "Projets réalisés", "valeur": "5+",  "description": "Projets terminés" },
+      { "titre": "Certifications",   "valeur": "2",   "description": "Certifications obtenues" }
+    ]
+  }
+}
