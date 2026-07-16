@@ -1,6 +1,6 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
 const themes = {
     light: {
@@ -72,10 +72,4 @@ export const ThemeProvider = ({ children }) => {
             { children }
         </ThemeContext.Provider>
     );
-};
-
-export const useTheme = () => {
-    const ctx = useContext(ThemeContext);
-    if (!ctx) throw new Error('useTheme doit être utilisé dans <ThemeProvider>');
-    return ctx;
 };

@@ -1,5 +1,4 @@
-import { useTheme } from "@/context/ThemeContext";
-import { useTranslation } from "react-i18next";
+import { useTheme } from "@/context/useTheme";
 
 export default function ThemeToggle() {
     const { isDark, toggleTheme } = useTheme();
