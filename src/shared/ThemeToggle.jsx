@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 export default function ThemeToggle() {
     const { isDark, toggleTheme } = useTheme();
-    const { t } = useTranslation();
     
     return (
         <button

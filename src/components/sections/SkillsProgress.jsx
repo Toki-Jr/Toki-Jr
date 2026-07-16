@@ -1,5 +1,5 @@
 // SkillsProgress.jsx
-import { color, motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
   SiNodedotjs, SiLaravel, SiPhp, SiPython,
