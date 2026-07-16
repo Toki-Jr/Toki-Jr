@@ -1,7 +1,11 @@
 {
   "nav": {
+    "home": "Accueil",
     "about": "À propos",
+    "experiences": "Expérience",
+    "competences": "Compétences",
     "projects": "Projets",
+    "formations": "Formations",
     "contact": "Contact"
   },
   "theme": {
@@ -31,5 +35,116 @@
       { "titre": "Projets réalisés", "valeur": "5+",  "description": "Projets terminés" },
       { "titre": "Certifications",   "valeur": "2",   "description": "Certifications obtenues" }
     ]
+  }, 
+  "experience": {
+    "sectionTitle": "Expériences",
+    "sectionTitleHighlight": "Professionnelles",
+    "hackathonLabel": "Hackathon",
+    "stageLabel": "Stage",
+    "technologiesLabel": "Technologies :",
+    "viewProject": "Voir le projet",
+    "items": {
+      "hackathon": {
+        "title": "Compétition Hackathon",
+        "company": "Youth Computing Andriainjato",
+        "date": "Mai 2026",
+        "missions": [
+          "Conception d'une application mobile de signalement citoyen avec photo et localisation.",
+          "Calcul automatique du score de priorité et affectation à l'organisme compétent.",
+          "Gestion des tâches par les organismes : acceptation, refus, intervention terrain.",
+          "Notification du citoyen et clôture du signalement avec données analytiques."
+        ],
+        "rank": "3ème place"
+      },
+      "stage": {
+        "title": "Stagiaire Développeur Web Fullstack",
+        "company": "FMA Laura Vicuna Anjarasoa Ankofafa Fianarantsoa",
+        "date": "Septembre 2025 – Décembre 2025",
+        "missions": [
+          "Conception et réalisation d'une application web pour la gestion d'inscription.",
+          "Développement d'une interface élégante, attractive et moderne.",
+          "Intégration et consommation de l'API pour accéder aux données de la base de données.",
+          "Mise en place de la base de données PostgreSQL mieux sécurisée."
+        ]
+      }
+    }
+  },
+  "formation": {
+    "eyebrow": "Parcours académique",
+    "sectionTitle": "Certifications",
+    "sectionTitleHighlight": "& Formations",
+    "formationsHeading": "Formations",
+    "certificationsHeading": "Certifications",
+    "viewCertificate": "Voir le certificat",
+    "closeCertificate": "Fermer",
+    "status": {
+      "inProgress": "En cours",
+      "validated": "Validé",
+      "completed": "Terminé"
+    },
+    "items": {
+      "formations": {
+        "l3": {
+          "title": "Troisième Année de Licence Professionnelle en Informatique",
+          "school": "École Nationale d'Informatique, Université de Fianarantsoa"
+        },
+        "l2": {
+          "title": "Deuxième Année de Licence Professionnelle en Informatique",
+          "school": "École Nationale d'Informatique, Université de Fianarantsoa"
+        },
+        "l1": {
+          "title": "Première Année de Licence Professionnelle en Informatique",
+          "school": "École Nationale d'Informatique, Université de Fianarantsoa"
+        }
+      },
+      "certifications": {
+        "cert1": {
+          "title": "Du réseau classique aux infrastructures automatisées programmables et ultra sécurisées",
+          "school": "Orange Digital Center (ODC), Andrainjato de Fianarantsoa",
+          "period": "16 au 19 Juin 2026"
+        },
+        "cert2": {
+          "title": "Découverte du DevOps et déploiement automatique des applications",
+          "school": "Orange Digital Center (ODC), Andrainjato de Fianarantsoa",
+          "period": "03 au 06 Mars 2026"
+        },
+        "cert3": {
+          "title": "Sécurisez votre système et vos données",
+          "school": "Orange Digital Center (ODC), Andrainjato de Fianarantsoa",
+          "period": "06 au 09 Mai 2025"
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "title1": "Récents",
+    "label": "Portfolio"
+  },
+  "contact": {
+    "eyebrow": "Restons en contact",
+    "titlePrefix": "Mes",
+    "titleSuffix": "Contacts",
+    "subtitle": "N'hésitez pas à me contacter",
+    "socialHeading": "Retrouvez-moi sur",
+    "info": {
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "address": "Adresse"
+    }
+  },
+  "skillsOrbit": {
+    "titlePrefix": "Mes",
+    "titleSuffix": "compétences",
+    "subtitle": "Tout ce qu'il faut pour créer des apps web modernes, de bout en bout.",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "quality": "Qualité",
+      "dbms": "SGBD",
+      "os": "OS",
+      "webserver": "Serveur Web"
+    }
   }
 }

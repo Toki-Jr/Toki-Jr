@@ -10,8 +10,12 @@
     "badge_school": "ENI - Fianarantsoa"
   },
   "nav": {
+    "home": "Home",
     "about": "About",
+    "experiences": "Experience",
+    "competences": "Skills",
     "projects": "Projects",
+    "formations": "Education",
     "contact": "Contact"
   },
   "about": {
@@ -24,5 +28,116 @@
       { "titre": "Projects done", "valeur": "5+",  "description": "Completed projects" },
       { "titre": "Certifications","valeur": "2",   "description": "Certifications obtained" }
     ]
+  },
+  "experience": {
+    "sectionTitle": "Professional",
+    "sectionTitleHighlight": "Experience",
+    "hackathonLabel": "Hackathon",
+    "stageLabel": "Internship",
+    "technologiesLabel": "Technologies:",
+    "viewProject": "View project",
+    "items": {
+      "hackathon": {
+        "title": "Hackathon Competition",
+        "company": "Youth Computing Andriainjato",
+        "date": "May 2026",
+        "missions": [
+          "Designed a citizen-reporting mobile app with photo capture and geolocation.",
+          "Automatic calculation of a priority score and assignment to the relevant organization.",
+          "Task management for organizations: acceptance, rejection, on-site intervention.",
+          "Citizen notification and report closure with analytics data."
+        ],
+        "rank": "3rd place"
+      },
+      "stage": {
+        "title": "Fullstack Web Developer Intern",
+        "company": "FMA Laura Vicuna Anjarasoa Ankofafa Fianarantsoa",
+        "date": "September 2025 – December 2025",
+        "missions": [
+          "Designed and built a web application for enrollment management.",
+          "Developed an elegant, attractive and modern interface.",
+          "Integrated and consumed the API to access database data.",
+          "Set up a better-secured PostgreSQL database."
+        ]
+      }
+    }
+  },
+  "formation": {
+    "eyebrow": "Academic background",
+    "sectionTitle": "Certifications",
+    "sectionTitleHighlight": "& Education",
+    "formationsHeading": "Education",
+    "certificationsHeading": "Certifications",
+    "viewCertificate": "View certificate",
+    "closeCertificate": "Close",
+    "status": {
+      "inProgress": "In progress",
+      "validated": "Completed",
+      "completed": "Completed"
+    },
+    "items": {
+      "formations": {
+        "l3": {
+          "title": "Third Year of Professional Bachelor's Degree in Computer Science",
+          "school": "National School of Computer Science, University of Fianarantsoa"
+        },
+        "l2": {
+          "title": "Second Year of Professional Bachelor's Degree in Computer Science",
+          "school": "National School of Computer Science, University of Fianarantsoa"
+        },
+        "l1": {
+          "title": "First Year of Professional Bachelor's Degree in Computer Science",
+          "school": "National School of Computer Science, University of Fianarantsoa"
+        }
+      },
+      "certifications": {
+        "cert1": {
+          "title": "From Classic Networks to Automated, Programmable and Ultra-Secure Infrastructures",
+          "school": "Orange Digital Center (ODC), Andrainjato, Fianarantsoa",
+          "period": "June 16–19, 2026"
+        },
+        "cert2": {
+          "title": "Introduction to DevOps and Automated Application Deployment",
+          "school": "Orange Digital Center (ODC), Andrainjato, Fianarantsoa",
+          "period": "March 3–6, 2026"
+        },
+        "cert3": {
+          "title": "Securing Your System and Data",
+          "school": "Orange Digital Center (ODC), Andrainjato, Fianarantsoa",
+          "period": "May 6–9, 2025"
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Recent",
+    "title1": "Projects",
+    "label": "Portfolio"
+  },
+  "contact": {
+    "eyebrow": "Let's connect",
+    "titlePrefix": "My",
+    "titleSuffix": "Contacts",
+    "subtitle": "Feel free to reach out",
+    "socialHeading": "Find me on",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    }
+  },
+  "skillsOrbit": {
+    "titlePrefix": "My",
+    "titleSuffix": "skills",
+    "subtitle": "Everything needed to build modern web apps, end to end.",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "quality": "Quality",
+      "dbms": "DBMS",
+      "os": "OS",
+      "webserver": "Web Server"
+    }
   }
 }

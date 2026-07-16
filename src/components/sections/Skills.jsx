@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   SiNodedotjs, SiLaravel, SiReact, SiTailwindcss,
   SiPhp, SiPython, SiJavascript,
   SiDocker, SiGithub, SiGithubactions,
-  SiPostgresql, SiMysql,SiApache, SiNginx
+  SiPostgresql, SiMysql, SiApache, SiNginx
 } from "react-icons/si";
 import { FaJava, FaLinux, FaWindows } from "react-icons/fa";
 import { RxComponent1 } from "react-icons/rx";
@@ -13,27 +14,27 @@ import { MdOutlineVerified } from "react-icons/md";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const SKILLS = [
-  { name: "Node.js",     icon: SiNodedotjs,    desc: "Node.js",      cat: "Backend",  ring: 0, color: "#6CCF4A" },
-  { name: "Laravel",     icon: SiLaravel,      desc: "Laravel",      cat: "Backend",  ring: 0, color: "#EF9F27" },
-  { name: "React.js",    icon: SiReact,        desc: "React.js",     cat: "Frontend", ring: 0, color: "#378ADD" },
-  { name: "Tailwind",    icon: SiTailwindcss,  desc: "Tailwind CSS", cat: "Frontend", ring: 0, color: "#06B6D4" },
-  { name: "shadcn/ui",   icon: RxComponent1,   desc: "shadcn/ui",    cat: "Frontend", ring: 0, color: "#7F77DD" },
-  { name: "Jakarta EE",  icon: FaJava,         desc: "Jakarta EE",   cat: "Backend",  ring: 0, color: "#D85A30" },
-  { name: "PHP",         icon: SiPhp,          desc: "PHP",          cat: "Backend",  ring: 1, color: "#D85A30" },
-  { name: "Python",      icon: SiPython,       desc: "Python",       cat: "Backend",  ring: 1, color: "#6CCF4A" },
-  { name: "Java",        icon: FaJava,         desc: "Java",         cat: "Backend",  ring: 1, color: "#EF9F27" },
-  { name: "JavaScript",  icon: SiJavascript,   desc: "JavaScript",   cat: "Frontend", ring: 1, color: "#378ADD" },
-  { name: "Docker",      icon: SiDocker,       desc: "Docker",       cat: "DevOps",   ring: 2, color: "#378ADD" },
-  { name: "Git/GitHub",  icon: SiGithub,       desc: "Git / GitHub", cat: "DevOps",   ring: 2, color: "#7F77DD" },
-  { name: "SonarQube",   icon: MdOutlineVerified, desc: "SonarQube", cat: "Qualité",  ring: 2, color: "#1D9E75" },
-  { name: "CI/CD",       icon: SiGithubactions,desc: "CI/CD",        cat: "DevOps",   ring: 2, color: "#1D9E75" },
-  { name: "GH Actions",  icon: SiGithubactions,desc: "GH Actions",   cat: "DevOps",   ring: 2, color: "#7F77DD" },
-  { name: "PostgreSQL",  icon: SiPostgresql,   desc: "PostgreSQL",   cat: "SGBD",     ring: 3, color: "#336791" },
-  { name: "MySQL",       icon: SiMysql,        desc: "MySQL",        cat: "SGBD",     ring: 3, color: "#EF9F27" },
-  { name: "Linux",       icon: FaLinux,        desc: "Linux",        cat: "OS",       ring: 3, color: "#FCC624" },
-  { name: "Windows 10/11", icon: FaWindows,     desc: "Windows",     cat: "OS",      ring: 3, color: "#0078D4" },
-  { name: "Apache",      icon: SiApache,         desc: "Apache",      cat: "Serveur Web",     ring: 3, color: "#D85A30" },
-  { name: "Nginx",       icon: SiNginx,         desc: "Nginx",        cat: "Serveur Web",     ring: 3, color: "#6CCF4A" },
+  { name: "Node.js",       icon: SiNodedotjs,      catKey: "backend",   ring: 0, color: "#6CCF4A" },
+  { name: "Laravel",       icon: SiLaravel,        catKey: "backend",   ring: 0, color: "#EF9F27" },
+  { name: "React.js",      icon: SiReact,          catKey: "frontend",  ring: 0, color: "#378ADD" },
+  { name: "Tailwind",      icon: SiTailwindcss,    catKey: "frontend",  ring: 0, color: "#06B6D4" },
+  { name: "shadcn/ui",     icon: RxComponent1,     catKey: "frontend",  ring: 0, color: "#7F77DD" },
+  { name: "Jakarta EE",    icon: FaJava,           catKey: "backend",   ring: 0, color: "#D85A30" },
+  { name: "PHP",           icon: SiPhp,            catKey: "backend",   ring: 1, color: "#D85A30" },
+  { name: "Python",        icon: SiPython,         catKey: "backend",   ring: 1, color: "#6CCF4A" },
+  { name: "Java",          icon: FaJava,           catKey: "backend",   ring: 1, color: "#EF9F27" },
+  { name: "JavaScript",    icon: SiJavascript,     catKey: "frontend",  ring: 1, color: "#378ADD" },
+  { name: "Docker",        icon: SiDocker,         catKey: "devops",    ring: 2, color: "#378ADD" },
+  { name: "Git/GitHub",    icon: SiGithub,         catKey: "devops",    ring: 2, color: "#7F77DD" },
+  { name: "SonarQube",     icon: MdOutlineVerified,catKey: "quality",   ring: 2, color: "#1D9E75" },
+  { name: "CI/CD",         icon: SiGithubactions,  catKey: "devops",    ring: 2, color: "#1D9E75" },
+  { name: "GH Actions",    icon: SiGithubactions,  catKey: "devops",    ring: 2, color: "#7F77DD" },
+  { name: "PostgreSQL",    icon: SiPostgresql,     catKey: "dbms",      ring: 3, color: "#336791" },
+  { name: "MySQL",         icon: SiMysql,          catKey: "dbms",      ring: 3, color: "#EF9F27" },
+  { name: "Linux",         icon: FaLinux,          catKey: "os",        ring: 3, color: "#FCC624" },
+  { name: "Windows 10/11", icon: FaWindows,        catKey: "os",        ring: 3, color: "#0078D4" },
+  { name: "Apache",        icon: SiApache,         catKey: "webserver", ring: 3, color: "#D85A30" },
+  { name: "Nginx",         icon: SiNginx,          catKey: "webserver", ring: 3, color: "#6CCF4A" },
 ];
 
 const RINGS = [
@@ -57,8 +58,9 @@ function startAngle(index, total) {
 
 // ─── Single Chip ─────────────────────────────────────────────────────────────
 
-function SkillChip({ skill, x, y, visible, index }) {
+function SkillChip({ skill, x, y, visible, index, t }) {
   const [hovered, setHovered] = useState(false);
+  const categoryLabel = t(`skillsOrbit.categories.${skill.catKey}`);
 
   return (
     <motion.div
@@ -83,23 +85,21 @@ function SkillChip({ skill, x, y, visible, index }) {
                    border rounded-lg
                    px-3 py-1.5
                    whitespace-nowrap pointer-events-none z-30
-                   shadow-md"
+                   shadow-md bg-background"
         initial={{ opacity: 0, y: 4 }}
         animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 4 }}
         transition={{ duration: 0.18 }}
       >
-        <span className="font-medium" style={{ color: skill.color }}>{skill.cat}</span>
+        <span className="font-medium" style={{ color: skill.color }}>{categoryLabel}</span>
         {" · "}
-        {skill.desc}
+        {skill.name}
       </motion.div>
 
       <motion.div
         className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full
                   text-xs font-medium whitespace-nowrap cursor-default
                   transition-colors duration-200"
-        style={{
-          border: `1px solid ${hovered ? skill.color + "88" : "rgba(128,128,128,0.25)"}`,
-        }}
+        style={{ border: `1px solid ${hovered ? skill.color + "88" : "rgba(128,128,128,0.25)"}`,}}
         animate={{ scale: hovered ? 1.12 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
@@ -112,6 +112,7 @@ function SkillChip({ skill, x, y, visible, index }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function SkillsOrbit() {
+  const { t } = useTranslation();
   const SIZE = 450;
   const CX = SIZE / 2;
   const CY = SIZE / 2;
@@ -189,36 +190,24 @@ export default function SkillsOrbit() {
   }, [isInView]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-20 px-5 text-center relative overflow-hidden"
-      aria-label="Compétences techniques"
-    >
-
+    <section id="competences" ref={sectionRef} className="py-20 px-5 text-center relative overflow-hidden" aria-label="Compétences techniques">
       {/* Title */}
-      <motion.h2
-        className="text-3xl lg:text-4xl font-bold mb-3"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
-      >
-        <span className="text-green-600">Mes</span> compétences
+      <motion.h2 className="text-3xl lg:text-4xl font-bold mb-3"
+        initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}>
+        <span className="text-green-600">{t("skillsOrbit.titlePrefix")}</span> {t("skillsOrbit.titleSuffix")}
       </motion.h2>
 
       {/* Subtitle */}
-      <motion.p
-        className="text-sm mx-auto mb-10"
-        initial={{ opacity: 0, y: 16 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
+      <motion.p className="text-sm mx-auto mb-10 opacity-70 max-w-md"
+        initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.14, ease: "easeOut" }}
       >
-        Tout ce qu'il faut pour créer des apps web modernes, de bout en bout.
+        {t("skillsOrbit.subtitle")}
       </motion.p>
 
       {/* Orbit */}
-      <div
-        className="relative mx-auto mb-2"
-        style={{ width: SIZE, height: SIZE }}
+      <div className="relative mx-auto mb-2" style={{ width: SIZE, height: SIZE }}
         onMouseEnter={() => { pausedRef.current = true; }}
         onMouseLeave={() => { setTimeout(() => { pausedRef.current = false; }, 360); }}
       >
@@ -233,8 +222,7 @@ export default function SkillsOrbit() {
 
         {/* Dashed rings */}
         {RINGS.map((ring, i) => (
-          <motion.div
-            key={i}
+          <motion.div key={i}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full
                        border border-dashed"
             style={{ width: ring.radius * 2, height: ring.radius * 2 }}
@@ -254,9 +242,7 @@ export default function SkillsOrbit() {
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: "backOut" }}
         >
-          <svg
-            width="25" height="25" viewBox="0 0 24 24"
-            fill="none" stroke="#6CCF4A"
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#6CCF4A"
             strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"
             aria-hidden="true"
           >
@@ -278,11 +264,11 @@ export default function SkillsOrbit() {
               y={positions[i].y}
               visible={isInView}
               index={i}
+              t={t}
             />
           ))}
         </div>
       </div>
     </section>
-    
   );
 }

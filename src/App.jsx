@@ -8,7 +8,6 @@ import SkillsProgress from './components/sections/SkillsProgress';
 import Formation from './components/sections/Formation';
 import ProjetCarousel from './components/sections/Projects';
 import ContactPage from './components/sections/Contact';
-import Footer from './components/sections/Footer';
 
 function App() {
 
@@ -23,7 +22,6 @@ function App() {
       <ProjetCarousel />
       <Formation />
       <ContactPage />
-      <Footer />
 
     </ThemeProvider>
   )

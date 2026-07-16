@@ -99,23 +99,23 @@ export default function SkillsProgress() {
 
     return (
         <div ref={ref} className="grid grid-cols-2 gap-x-8 gap-y-8 mt-12 max-w-6xl mx-auto px-4">
-                {CATEGORIES.map((cat, ci) => (
-                    <div key={cat.label}>
-                    <motion.div
-                        className="flex items-center gap-2 mb-4"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={inView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.4, delay: ci * 0.08 }}
-                    >
-                        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: cat.color }} />
-                        <span className="font-medium">{cat.label}</span>
-                    </motion.div>
+          {CATEGORIES.map((cat, ci) => (
+              <div key={cat.label}>
+              <motion.div
+                  className="flex items-center gap-2 mb-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: ci * 0.08 }}
+              >
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: cat.color }} />
+                  <span className="font-medium">{cat.label}</span>
+              </motion.div>
 
-                    {cat.skills.map((skill, si) => (
-                        <SkillBar key={skill.name} skill={skill} inView={inView} index={ci * 6 + si} />
-                    ))}
-                    </div>
-                ))}
-            </div>
+              {cat.skills.map((skill, si) => (
+                  <SkillBar key={skill.name} skill={skill} inView={inView} index={ci * 6 + si} />
+              ))}
+              </div>
+          ))}
+        </div>
     );
 }
